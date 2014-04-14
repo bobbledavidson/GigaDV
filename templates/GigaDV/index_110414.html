@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title> GigaDV - Index</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<h1>Publications:</h1>
+
+
+	{% for p in projects %}
+
+		<div style="float:left;padding:10px" >
+
+			<h2><a href="project/{{p.getId}}">{{p.getName}}</a></h2>
+				{% for ds in p.listAnnotation %}
+					{{ds}}
+				{% endfor %}
+
+			<p>{{p.getDescription}}</p>
+		</div>
+
+
+	{% endfor %}
+
+	
+
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+</body>
+</html>

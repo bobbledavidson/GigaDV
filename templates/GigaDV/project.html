@@ -1,0 +1,47 @@
+{% extends './GDVbase.html' %}
+
+{% block content %} 
+
+<div class="container" id="wrap">
+        <div class="row">
+
+                <div class="span12">
+                        <h3 class="dataset-title">{{proj_name}}</h3>
+                        <p></p>
+
+                        <p>{{proj_desc}}
+                        </p>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="span12">
+                        <h4>Datasets</h4>
+                        <br>
+                        {% for ds in datasets %}
+                        <div style="float:left;">
+                                <a href="dataset/{{ds.getId}}">{{ds.getName}}</a>
+                                <br>
+                                <i>This dataset contains {{ds.countChildren}} images.</i>
+                                
+                                <p>{{ds.getDescription}}</p> 
+                                <i>{{ds.listAnnotations}}</i> 
+        
+                        </div>
+                        {% endfor %}    
+
+                </div>
+        
+        </div>
+
+        <div class="row">
+                
+                <div class="span12">
+                        <p></p>
+                </div>
+        
+        </div>
+
+</div>
+
+{% endblock %}

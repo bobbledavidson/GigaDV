@@ -1,0 +1,35 @@
+{% extends './GDVbase.html' %}
+
+{% block title %}
+<title> GigaDV - Project {{proj_name}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="wrap">
+	<div class="row">
+
+		<div class="span12">
+			<h3>{{dataset.getName}}</h3>
+
+			{% for i in dataset.listChildren %}
+
+				<div style="float:left; padding:10px">
+			
+				
+			
+				<img src="{% url webgateway.views.render_thumbnail i.id %}" />
+				<br />
+			
+				
+				<br />
+				{{i.getName}}
+
+				</div>
+
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

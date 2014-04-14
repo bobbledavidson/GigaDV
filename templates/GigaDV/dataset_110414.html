@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title> GigaDV - Project {{proj_name}}</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<h1>{{dataset.getName}}</h1>
+
+	{% for i in dataset.listChildren %}
+
+		<div style="float:left; padding:10px">
+			
+				
+			
+			<img src="{% url webgateway.views.render_thumbnail i.id %}" />
+			<br />
+			
+				
+			<br />
+			{{i.getName}}
+
+		</div>
+
+	{% endfor %}
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+</body>
+</html>

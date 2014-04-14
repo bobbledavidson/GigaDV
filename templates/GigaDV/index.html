@@ -1,0 +1,43 @@
+{% extends './GDVbase.html' %}
+
+{% block title %}
+	<title> GigaDV - Index</title>
+	
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="wrap">
+        <div class="row">
+		<div class="span12">
+
+			<h2>Publications:</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+
+			{% for p in projects %}
+
+				<div style="float:left;padding:10px" >
+
+					<h2><a href="project/{{p.getId}}">{{p.getName}}</a></h2>
+					{% for ds in p.listAnnotation %}
+						{{ds}}	
+					{% endfor %}
+
+					<p>{{p.getDescription}}</p>
+				</div>
+
+
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+	
+
+
+
