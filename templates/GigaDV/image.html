@@ -1,0 +1,39 @@
+{% extends './GDVbase.html' %}
+
+{% block title %}
+<title> GigaDV - image {{image.getName}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="wrap">
+	<div class="row">
+
+		<div class="span12">
+			<a href="/GigaDV/">home</a>
+			>
+			<a href="/GigaDV/project/{{project.getId}}">{{project.getName}}</a>  
+			>
+			<a href="/GigaDV/project/{{project.getId}}/dataset/{{dataset.getId}}">{{dataset.getName}}</a>
+			<h3>{{image.getName}}</h3>
+			
+
+			<div style="float:left; padding:10px">
+				<a href="{% url webgateway.views.full_viewer image.getId %}">Click for popout viewer</a>
+			
+				<br />	
+				{% comment %}
+				<img src="{% url webgateway.views.render_image image.getId %}" />
+				<br />
+				{% endcomment %}
+				<iframe src="{% url webgateway.views.full_viewer image.getId %}" width="900" height="1000"></iframe>
+				<br />
+				<a href="{% url webgateway.views.full_viewer image.getId %}">Click for popout viewer</a>
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -10,6 +10,11 @@
 	<div class="row">
 
 		<div class="span12">
+
+			<a href="/GigaDV/">home</a>
+                        >
+                        <a href="/GigaDV/project/{{project.getId}}">{{project.getName}}</a> 
+
 			<h3>{{dataset.getName}}</h3>
 
 			{% for i in dataset.listChildren %}
@@ -17,14 +22,14 @@
 				<div style="float:left; padding:10px">
 			
 				
-			
+				<a href="image/{{i.id}}">			
 				<img src="{% url webgateway.views.render_thumbnail i.id %}" />
 				<br />
 			
 				
 				<br />
 				{{i.getName}}
-
+				</a>
 				</div>
 
 			{% endfor %}
